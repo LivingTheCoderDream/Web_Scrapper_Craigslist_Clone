@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!--- displaying everything that base.html does but adding the block - endblock part to base.html--->
+{% extends 'base.html' %}
 
-</body>
-</html>
+<!--- Adding stuff to the block - endblock part of base.html --->
+{% block content %}
+    <h2 style="text-align: center">{{ search | title }}</h2>
+<!--- Pipe to title makes the text entered be displayed only in the 'Title Case' --->
+{% endblock content %}

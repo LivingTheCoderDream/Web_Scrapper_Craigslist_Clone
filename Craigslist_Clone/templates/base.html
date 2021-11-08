@@ -51,11 +51,20 @@
         </div>
     </div>
 
-</div>
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name='search' placeholder="SEARCH">
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+    </form>
 
 {% block content %}
-
+<!--- Any other html file that EXTENDS this file will take up everything this has and the other add ons present in the
+ html file that extended this file will be displayed in this block --->
 {% endblock content %}
+
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

@@ -8,4 +8,8 @@ def home(request):
 
 
 def new_search(request):
-    return render(request, template_name='my_app/new_search.html')
+    search = request.POST.get('search')
+    stuff_for_frontend = {
+        'search': search,
+    }
+    return render(request, template_name='my_app/new_search.html', context=stuff_for_frontend)
